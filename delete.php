@@ -45,26 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container mt-5">
         <h1>Delete Article</h1>
-        <p>Are you sure you want to delete this article?</p>
+        <p>Apakah anda yakin ingin menghapus artikel</p>
+        <p class="font-weight-bold"><?php echo $row['judul_artikel']; ?></p>
         <form method="POST">
             <input type="hidden" name="id" value="<?php echo $row["id_artikel"]; ?>">
             <input type="submit" class="btn btn-danger" value="Delete">
         </form>
-        <a class="btn btn-secondary" href="index.php">Cancel</a>
+        <a class="btn btn-secondary mt-3" href="index.php">Cancel</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <!-- <script>
-    function confirmDelete(articleId) {
-        var confirmation = confirm("Are you sure you want to delete this article?");
-        if (confirmation) {
-            // Redirect to delete.php with article ID for deletion
-            window.location = "delete.php?id_artikel=" + articleId;
-        } else {
-            window.location = "index.php"
-        }
-    }
-    </script> -->
 </body>
 
 </html>
