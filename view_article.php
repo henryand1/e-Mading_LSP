@@ -32,13 +32,14 @@ if (isset($_GET["id_artikel"])) {
         <head>
             <title><?php echo $title; ?></title>
             <!-- Add Bootstrap CSS -->
+            <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
             <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         </head>
 
         <body>
             <nav class="navbar pt-3 pb-3" style="background-color: #1E1E1E;">
             <div class="container-fluid" >
-                <h1 class="text-light">e-Mading</h1>
+                <h1 class="text-light" style="font-family: Montserrat">e-Mading</h1>
                 <div class="d-flex">
                 <a href="logout.php" class="btn fw-bold" style="background-color: white;">Logout</a>
             </div>
