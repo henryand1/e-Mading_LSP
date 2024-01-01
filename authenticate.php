@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 
+//Autentikasi untuk login user
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
@@ -19,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["id_users"] = $row["id_users"];
             $_SESSION["username"] = $row["username"];
             if ($row["id_users"] == 1) {
-                header("Location: index.php"); // Redirect to the dashboard
+                header("Location: index.php"); // Jika admin (id_users = 1) maka akan ke page admin (index.php)
             } else {
-                header("Location: home_user.php");
+                header("Location: home_user.php"); //Jika bukan maka akan ke page user
             }
             exit();
         } else {

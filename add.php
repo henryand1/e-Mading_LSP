@@ -8,6 +8,7 @@ if (!isset($_SESSION["id_users"])) {
 
 require_once('config.php');
 
+//Memasukkan data input kedalam database
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST["judul_artikel"];
     $article = $_POST["isi_artikel"];
@@ -17,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $created_at = date("Y-m-d");
     $updated_at = date("Y-m-d");
 
-    // File upload handling
+    // Handling untuk upload file foto
     $picture = $_FILES["foto"]["name"];
     $folder = "./images/" . $picture;
 

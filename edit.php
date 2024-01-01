@@ -8,6 +8,7 @@ if (!isset($_SESSION["id_users"])) {
 
 require_once('config.php');
 
+//Mengubah artikel dari data yang diinput (berdasarkan id)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id_artikel"];
     $title = $_POST["judul_artikel"];
@@ -17,10 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = $_POST["author"];
     $updated_at = date("Y-m-d");
 
-    // Initialize $picture to an empty string
 
+    //Handling untuk pengubahan foto
     if ($_FILES["foto-new"]["name"] != "") {
-        // New image handling
         $picture = $_FILES["foto-new"]["name"];
         $folder = "./images/" . $picture;
         move_uploaded_file($_FILES["foto-new"]["tmp_name"], $folder);

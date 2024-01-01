@@ -8,11 +8,9 @@ if (!isset($_SESSION["id_users"])) {
 
 require_once('config.php');
 
-// Check if 'id' parameter is set in the URL
 if (isset($_GET["id_artikel"])) {
     $article_id = $_GET["id_artikel"];
 
-    // Retrieve the article details from the database
     $sql = "SELECT * FROM tb_artikel WHERE id_artikel = $article_id";
     $result = $conn->query($sql);
 
@@ -24,7 +22,6 @@ if (isset($_GET["id_artikel"])) {
         $author = $row["author"];
         $publish_date = $row["created_at"];
 
-        // Display the article details
 ?>
         <!DOCTYPE html>
         <html>

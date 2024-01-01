@@ -8,6 +8,7 @@ if (!isset($_SESSION["id_users"])) {
 
 require_once('config.php');
 
+//Menghapus artikel berdasarkan id yang didapat
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST["id"];
 
