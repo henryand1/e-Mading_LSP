@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $author = $_POST["author"];
     $created_at = date("Y-m-d");
     $updated_at = date("Y-m-d");
+    $id = ($_SESSION["id_users"]);
 
     // Handling untuk upload file foto
     $picture = $_FILES["foto"]["name"];
@@ -24,8 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     move_uploaded_file($_FILES["foto"]["tmp_name"], $folder);
 
-    $sql = "INSERT INTO tb_artikel (judul_artikel, header, isi_artikel, foto, status_publish, created_at, updated_at, author)
-    VALUES ('$title','$deskripsi', '$article', '$picture', '$status', '$created_at', '$updated_at', '$author')";
+    $sql = "INSERT INTO tb_artikel (judul_artikel, header, isi_artikel, foto, status_publish, id_users, created_at, updated_at, author)
+    VALUES ('$title','$deskripsi', '$article', '$picture', '$status', '$id', '$created_at', '$updated_at', '$author')";
 
     // echo $sql;
 
