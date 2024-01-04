@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     </nav>
     <div class="container mt-5">
-        <h1>Tambah Artikel</h1>
+        <h1>Edit Artikel</h1>
         <form method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id_artikel" value="<?php echo $row["id_artikel"]; ?>">
             <div class="form-group mt-3">
